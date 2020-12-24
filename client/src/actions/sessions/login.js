@@ -111,4 +111,36 @@ const postSignOut = (params, redirect) => {
   });
 };
 
-export { getSignInCredentials, postSignInCredentials, postSignOut };
+const resetPassword = (params) => {
+  const form = new FormData(params.current);
+
+  const url = '/api/auth/users/password';
+
+  const config = {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'include',
+    headers: {
+      Accept: 'application/json',
+    },
+    body: form,
+  };
+  return (
+    fetch(url, config)
+      .then(async (response) => {
+        const json = await response.json();
+        return ({ response, json });
+      })
+      .then(({ response, json }) => {
+        console.log(response);
+        console.log(json);
+      })
+    // eslint-disable-next-line no-console
+      .catch((err) => console.log(err))
+  );
+};
+
+export {
+  getSignInCredentials, postSignInCredentials, postSignOut, resetPassword,
+};

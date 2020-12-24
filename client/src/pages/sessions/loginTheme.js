@@ -18,6 +18,10 @@ const loginTheme = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  instruction: {
+    margin: theme.spacing(2, 0, 2),
+    display: 'flex',
+  },
 }));
 
 export default loginTheme;

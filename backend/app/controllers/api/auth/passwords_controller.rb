@@ -3,6 +3,7 @@
 module Api
   module Auth
     class PasswordsController < Devise::PasswordsController
+      respond_to :json, :html
       # GET /resource/password/new
       # def new
       #   super

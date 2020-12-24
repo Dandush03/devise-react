@@ -10,6 +10,7 @@ import storeConfig from './store';
 import reportWebVitals from './reportWebVitals';
 import SignIn from './pages/sessions/SignIn';
 import Home from './pages/Home';
+import ForgotPassword from './pages/sessions/ForgotPassword';
 
 const store = storeConfig();
 
@@ -17,6 +18,7 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <Switch>
+        <Route path="/auth/password/new" exact component={ForgotPassword} />
         <Route path="/auth/sign_in" exact component={SignIn} />
         <Route path="/" exact component={Home} />
       </Switch>
